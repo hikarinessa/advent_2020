@@ -1,15 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-44" />
-    <option name="y" value="-19" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+  <component name="ChangeListManager">
+    <list default="true" id="5b29e91c-e7e8-47b1-a3f5-a9454175af2c" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1lD6GTEonTYoRcK82NwnfoskPh8" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.04_PassportProcessing">
+  <component name="RunManager" selected="Python.01_ReportRepair">
     <configuration name="01_ReportRepair" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="advent_2020_martin" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -102,5 +114,40 @@
         <item itemvalue="Python.01_ReportRepair" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5b29e91c-e7e8-47b1-a3f5-a9454175af2c" name="Default Changelist" comment="" />
+      <created>1607119218709</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1607119218709</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="808" y="509" key="#01_ReportRepair" timestamp="1607119242057">
+      <screen x="0" y="0" width="3072" height="1728" />
+    </state>
+    <state x="808" y="509" key="#01_ReportRepair/0.0.3072.1728@0.0.3072.1728" timestamp="1607119242057" />
+    <state x="589" y="537" key="SettingsEditor" timestamp="1607119306688">
+      <screen x="0" y="0" width="3072" height="1728" />
+    </state>
+    <state x="589" y="537" key="SettingsEditor/0.0.3072.1728@0.0.3072.1728" timestamp="1607119306688" />
   </component>
 </project>

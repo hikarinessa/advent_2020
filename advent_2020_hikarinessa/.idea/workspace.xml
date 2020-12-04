@@ -22,8 +22,13 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../advent_2020" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../advent_2020/advent_2020_martin" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Dropbox\Python\advent_2020" />
+    </key>
   </component>
   <component name="RunManager" selected="Python.advent_04">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
@@ -217,10 +222,10 @@
       <screen x="0" y="0" width="3072" height="1728" />
     </state>
     <state x="2013" y="815" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.0.3072.1728@0.0.3072.1728" timestamp="1606930263722" />
-    <state x="2030" y="687" key="FileChooserDialogImpl" timestamp="1607118035427">
+    <state x="2030" y="687" key="FileChooserDialogImpl" timestamp="1607119217408">
       <screen x="0" y="0" width="3072" height="1728" />
     </state>
-    <state x="2030" y="687" key="FileChooserDialogImpl/0.0.3072.1728@0.0.3072.1728" timestamp="1607118035427" />
+    <state x="2030" y="687" key="FileChooserDialogImpl/0.0.3072.1728@0.0.3072.1728" timestamp="1607119217408" />
     <state width="1516" height="436" key="GridCell.Tab.0.bottom" timestamp="1607117251060">
       <screen x="0" y="0" width="3072" height="1728" />
     </state>
@@ -253,10 +258,10 @@
       <screen x="0" y="0" width="3072" height="1728" />
     </state>
     <state width="1516" height="515" key="GridCell.Tab.1.right/0.0.3072.1728@0.0.3072.1728" timestamp="1607114590915" />
-    <state x="1757" y="584" key="SettingsEditor" timestamp="1606930335186">
+    <state x="1757" y="584" key="SettingsEditor" timestamp="1607118208762">
       <screen x="0" y="0" width="3072" height="1728" />
     </state>
-    <state x="1757" y="584" key="SettingsEditor/0.0.3072.1728@0.0.3072.1728" timestamp="1606930335186" />
+    <state x="1757" y="584" key="SettingsEditor/0.0.3072.1728@0.0.3072.1728" timestamp="1607118208762" />
     <state x="1945" y="766" key="com.intellij.ide.util.TipDialog" timestamp="1606930283388">
       <screen x="0" y="0" width="3072" height="1728" />
     </state>
