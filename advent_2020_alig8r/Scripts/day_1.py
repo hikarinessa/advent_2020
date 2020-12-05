@@ -1,7 +1,7 @@
 import os
 import sys
 
-_INPUT =  open(os.path.join(sys.path[0], "input_day1_1.txt"), "r")
+_INPUT =  open(os.path.join(sys.path[0], "../Inputs/input_day_1.txt"), "r")
 _NUMBERS = []
 _OUTPUT = 0
 

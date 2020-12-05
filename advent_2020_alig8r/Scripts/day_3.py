@@ -2,7 +2,7 @@ import os
 import sys
 
 
-_INPUT_1 =  open(os.path.join(sys.path[0], "input_day_3.txt"), "r")
+_INPUT_1 =  open(os.path.join(sys.path[0], "../Inputs/input_day_3.txt"), "r")
 _INPUT_2 = [[1, 1], [3, 1], [5, 1], [7, 1], [1, 2]]
 _MAP = []
 _OUTPUT_2 = 0
@@ -22,7 +22,6 @@ for coord in _INPUT_2:
     coord_down = 0
     moves_left = coord[0]
     moves_down = coord[1]
-    print(moves_left, moves_down)
 
     for line_number in range(0, (len(_MAP) - 1)):
         line_array = _MAP[line_number]
@@ -48,7 +47,7 @@ for coord in _INPUT_2:
          
             
 print("FIN ", _OUTPUT_1)
-print(_OUTPUT_2)
+print("FIN 2: ", _OUTPUT_2)
     
 
     

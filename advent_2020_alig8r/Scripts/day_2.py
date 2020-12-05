@@ -2,12 +2,12 @@ import os
 import sys
 import re
 
-_INPUT =  open(os.path.join(sys.path[0], "input_day2.txt"), "r")
+_INPUT =  open(os.path.join(sys.path[0], "../Inputs/input_day_2.txt"), "r")
 _OUTPUT_1 = 0
 _OUTPUT_2 = 0
 
 
-def get_password_set_1(line):
+def how_luz_gets_password_sets(line):
 
     '''
     Every parenthesis is a group. 
