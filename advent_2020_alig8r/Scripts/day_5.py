@@ -8,7 +8,7 @@ with open(os.path.join(sys.path[0], "../Inputs/input_day_5.txt"), "r") as my_inp
 
 _FB_RANGE = [0, 127]
 _LR_RANGE = [0, 7]
-_SEATS_TAKEN = {}
+_BOARDING_PASSES = []
 
 def get_new_range(letter, curr_range):
     middle = curr_range[0] + ((curr_range[1] - curr_range[0]) / 2)
@@ -29,41 +29,38 @@ def get_final_value(letter, curr_range):
 
 
 _HIGHEST_ID = 0
+count = 0
 
-
+# Returns a list of _BOARDING_PASSES
 for entry in _INPUT_1:
-    #entry = "FBFBBFBRLL" 
+    count += 1
     _SEAT_ROW = 0
     _SEAT_COLUMN = 0
     _SEAT_ID = 0
 
-    #print("START: ", _SEAT_ID, _HIGHEST_ID)
-
     new_range_fb = _FB_RANGE
     new_range_lr = _LR_RANGE
-
-    entry = [entry[:7], entry[7:]]
-    
+    entry = [entry[:7], entry[7:]]    
 
     for row in entry[0]:
         new_range_fb = get_new_range(row, new_range_fb)
     _SEAT_ROW = get_final_value(entry[0][-1], new_range_fb)
+
     for column in entry[1]:
         new_range_lr = get_new_range(column, new_range_lr)
     _SEAT_COLUMN = get_final_value(entry[1][-1], new_range_lr)
     _SEAT_ID = (_SEAT_ROW * 8) + _SEAT_COLUMN
-    _SEATS_TAKEN[_SEAT_ROW] = _SEAT_COLUMN
+
+
+    _BOARDING_PASSES.append(_SEAT_ID)
+    _BOARDING_PASSES.sort()
 
     if _SEAT_ID > _HIGHEST_ID:
         _HIGHEST_ID = _SEAT_ID
 
-    #print("END: ", _SEAT_ID, _HIGHEST_ID)
 
-print("FIN FIN: ", _HIGHEST_ID, _SEATS_TAKEN)
+for i, seat in enumerate(_BOARDING_PASSES):
+    if (_BOARDING_PASSES[i] + 1) != _BOARDING_PASSES[i + 1]:
+        print(_BOARDING_PASSES[i] + 1)
+        break
 
-
-
-
-
-
-#print(get_new_range("F", [0, 63]))
