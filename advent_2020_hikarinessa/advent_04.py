@@ -74,11 +74,10 @@ class Passport:
 def data_to_passports(raw_data):
     passports = []
 
-    one_string_per_pass = raw_data.split("\n\n")  # splits proto-objects on double returns
-
-    # remove unnecessary returns on every item as well
-    for i in range(len(one_string_per_pass)):
-        one_string_per_pass[i] = one_string_per_pass[i].replace("\n", " ")
+    # remove unnecessary returns
+    one_string_per_pass = raw_data.replace("\n", " ")
+    # split items on double spaces (previously double returns)
+    one_string_per_pass = one_string_per_pass.split("  ")
 
     for i in range(len(one_string_per_pass)):
         parsed_entry = re.split(":| ", one_string_per_pass[i])
@@ -120,8 +119,8 @@ def check_valid_passports(passports):
     return valid_pass
 
 
-my_passports = data_to_passports( advent_04_input.my_input )
-my_passports_test = data_to_passports( advent_04_input.test_invalid )
+my_passports = data_to_passports(advent_04_input.my_input)
+my_passports_test = data_to_passports(advent_04_input.test_invalid)
 
 # answer is 226
 print("First part: ", check_passports(my_passports))
