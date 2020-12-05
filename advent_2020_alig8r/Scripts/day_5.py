@@ -43,6 +43,7 @@ for entry in _INPUT_1:
     new_range_lr = _LR_RANGE
 
     entry = [entry[:7], entry[7:]]
+    
 
     for row in entry[0]:
         new_range_fb = get_new_range(row, new_range_fb)
