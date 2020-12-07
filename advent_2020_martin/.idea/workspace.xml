@@ -29,16 +29,25 @@
         <entry file="file://$PROJECT_DIR$/04_PassportProcessing.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
-              <caret line="17" column="10" lean-forward="true" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
+              <caret line="17" column="10" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/05_BinaryBoarding.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="972" selection-start-line="972" selection-end-line="972" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/05_BinaryBoarding.py">
+        <entry file="file://$PROJECT_DIR$/06_CustomCustoms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="1014" column="17" lean-forward="true" selection-start-line="1014" selection-start-column="17" selection-end-line="1014" selection-end-column="17" />
+            <state relative-caret-position="415">
+              <caret line="2095" column="50" lean-forward="true" selection-start-line="2095" selection-start-column="50" selection-end-line="2095" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -59,6 +68,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/05_BinaryBoarding.py" />
+        <option value="$PROJECT_DIR$/06_CustomCustoms.py" />
       </list>
     </option>
   </component>
@@ -75,6 +85,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -86,7 +97,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="ProjectViewState">
@@ -111,28 +121,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.05_BinaryBoarding">
-    <configuration name="01_ReportRepair" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="advent_2020_martin" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/01_ReportRepair.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.06_CustomCustoms">
     <configuration name="02_PasswordPhilosophy" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="advent_2020_martin" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -217,13 +206,34 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="06_CustomCustoms" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="advent_2020_martin" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/06_CustomCustoms.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.06_CustomCustoms" />
         <item itemvalue="Python.05_BinaryBoarding" />
         <item itemvalue="Python.04_PassportProcessing" />
         <item itemvalue="Python.03_TobogganTrajectory" />
         <item itemvalue="Python.02_PasswordPhilosophy" />
-        <item itemvalue="Python.01_ReportRepair" />
       </list>
     </recent_temporary>
   </component>
@@ -261,7 +271,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.19176598" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.19176598" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -286,6 +296,16 @@
     <state x="589" y="537" key="SettingsEditor/0.0.3072.1728@0.0.3072.1728" timestamp="1607119306688" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/../advent_2020_alig8r/Scripts/day_3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/01_ReportRepair.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -298,14 +318,21 @@
     <entry file="file://$PROJECT_DIR$/04_PassportProcessing.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
-          <caret line="17" column="10" lean-forward="true" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
+          <caret line="17" column="10" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/05_BinaryBoarding.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="1014" column="17" lean-forward="true" selection-start-line="1014" selection-start-column="17" selection-end-line="1014" selection-end-column="17" />
+        <state relative-caret-position="17">
+          <caret line="972" selection-start-line="972" selection-end-line="972" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/06_CustomCustoms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="415">
+          <caret line="2095" column="50" lean-forward="true" selection-start-line="2095" selection-start-column="50" selection-end-line="2095" selection-end-column="50" />
         </state>
       </provider>
     </entry>
