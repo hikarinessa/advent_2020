@@ -10,6 +10,10 @@ def split (lo, hi):
     return int(lo), int((lo + half)), int((lo + half + 0.5)), int(hi)
 
 def recursive_partition(string, slo, shi, mx:int):
+    """ Inputs are the string to parse,
+    the bottom half and top half codes for the partition,
+    and the max number it could be, in order to define the starting point.
+    """
     x = 0
     y = mx
     result = 0
@@ -61,8 +65,22 @@ bp_list = list_to_objects(boarding_pass_list)
 # for j in bp_list:
 #     print(j.code, j.row, j.col, j.seat_id)
 
+### FIRST PART---------------------------------
+id_list = [k.seat_id for k in bp_list]
+id_list.sort()
+print("First part: ", id_list[-1])  # 850
+### -------------------------------------------
 
-# optional stuff
+### SECOND PART -------------------------------
+for index in range(len(id_list)-1):
+    if id_list[index] + 1 != id_list[index+1]:
+        print("Second part: ", id_list[index] + 1)  # 599
+### -------------------------------------------
+
+
+# region ---------- This is not part of the puzzle. It's unfinished. Ignore. ----------
+print("************************************************")
+
 def find_my_boarding_pass(boarding_list):
     my_row_dict = {}
     my_row : int
@@ -99,20 +117,9 @@ def find_my_boarding_pass(boarding_list):
         else:
             my_boarding_pass += "L"
             current_max_col /= 2
-    print(my_boarding_pass)
 
+    return my_boarding_pass
 
-
-id_list = [k.seat_id for k in bp_list]
-id_list.sort()
-
-print("First part: ", id_list[-1])  # 850
-
-for index in range(len(id_list)-1):
-    if id_list[index] + 1 != id_list[index+1]:
-        print("Second part: ", id_list[index] + 1)  # 599
-
-find_my_boarding_pass(bp_list)
-
-test = BoardingPass("BFBBFBFBRRL")
-print(test.row, test.col, test.seat_id)
+test = BoardingPass(find_my_boarding_pass(bp_list))
+print(test.code, test.row, test.col, test.seat_id)
+# endregion ---------------------------------------------------------------------------
