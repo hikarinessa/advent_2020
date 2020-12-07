@@ -22,7 +22,6 @@ def can_contain_my_bag(bags_dict):
                 if bag not in can_contain_my_bag_list:
                     can_contain_my_bag_list.append(bag)
                     # print(bag, "can contain my bag")
-
     # RECURSIVE SEARCH
     recursive = True
     while recursive:
@@ -45,7 +44,6 @@ def can_contain_my_bag(bags_dict):
 def contained_in_my_bag(bags_dict):
     number_contained = 0
     bags_contained = bags_dict[MY_BAG]
-
 
     while len(bags_contained) != 0:
         times = int(bags_contained[0][0])
