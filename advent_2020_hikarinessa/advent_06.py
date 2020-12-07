@@ -1,6 +1,3 @@
-import os
-import sys
-
 with open("advent_06_input.txt", "r") as raw_input:
     INPUT = raw_input.read().replace(" ", "\n")
     INPUT = INPUT.split("\n\n")
