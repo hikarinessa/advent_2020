@@ -1,7 +1,7 @@
 import re
 
 with open("advent_07_input.txt", "r") as raw_input:
-    INPUT = raw_input.read().split("\n")
+    INPUT = raw_input.read().splitlines()
 
 MY_BAG = "shiny gold"
 my_dict = {}
