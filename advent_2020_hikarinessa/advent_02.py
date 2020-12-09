@@ -10,7 +10,7 @@ def find_valid_pass(pass_list):
     valid_passwords = 0
 
     for entry in pass_list:
-        parse = re.search(r"(\d+)-(\d+) (.):(.+)", entry)
+        parse = re.search(r"(\d+)-(\d+) (.): (.+)", entry)
         range_begin = int(parse.group(1))
         range_end = int(parse.group(2))
         key_letter = parse.group(3)
@@ -52,5 +52,5 @@ def find_correct_pass(pass_list):
     print("Second part: ", valid_passwords)
 
 
-find_valid_pass(my_list)
-find_correct_pass(my_list)
+find_valid_pass(my_list)  # 467
+find_correct_pass(my_list)  # 401

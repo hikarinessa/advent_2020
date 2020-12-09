@@ -15,6 +15,7 @@ class Passport:
         self.cid = ""  # (Country ID)
 
     def valid_fields(self, debug):
+        """Returns True if all fields follow the guidelines. Ignores CID."""
         valid = True
         if debug: print(self.number)
 
@@ -44,7 +45,7 @@ class Passport:
             valid = False
             if debug: print(self.hgt, "is an invalid height")
 
-        # hair colour
+        # hair colour has to have a hash in the beginning
         if self.hcl is "" or self.hcl[0] is not "#":
             valid = False
             if debug: print(self.hcl, "is an invalid hair color, missing the hash")
@@ -70,8 +71,8 @@ class Passport:
         return valid
 
 
-# transforms the input from a string to a list of Passport objects
 def data_to_passports(raw_data):
+    """Converts raw input into a list of Passport objects."""
     passports = []
 
     # remove unnecessary returns
@@ -81,12 +82,9 @@ def data_to_passports(raw_data):
 
     for i in range(len(one_string_per_pass)):
         parsed_entry = re.split(":| ", one_string_per_pass[i])
-
         new_pass = Passport(i)
-
         for j in range(0, len(parsed_entry), 2):
             setattr(new_pass, parsed_entry[j], parsed_entry[j+1])
-
         passports.append(new_pass)
 
     return passports
@@ -122,8 +120,5 @@ def check_valid_passports(passports):
 my_passports = data_to_passports(advent_04_input.my_input)
 my_passports_test = data_to_passports(advent_04_input.test_invalid)
 
-# answer is 226
-print("First part: ", check_passports(my_passports))
-
-# answer is 160
-print("Second part: ", check_valid_passports(my_passports))
+print("First part: ", check_passports(my_passports))  # answer is 226
+print("Second part: ", check_valid_passports(my_passports))  # answer is 160

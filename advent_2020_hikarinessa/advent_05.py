@@ -1,3 +1,4 @@
+# https://adventofcode.com/2020/day/5
 from advent_05_input import boarding_pass_list
 from advent_05_input import bp_list_test
 MAX_ROW = 127  # 0 to 127
@@ -9,6 +10,10 @@ def split (lo, hi):
     return int(lo), int((lo + half)), int((lo + half + 0.5)), int(hi)
 
 def recursive_partition(string, slo, shi, mx:int):
+    """ Inputs are the string to parse,
+    the bottom half and top half codes for the partition,
+    and the max number it could be, in order to define the starting point.
+    """
     x = 0
     y = mx
     result = 0
@@ -60,12 +65,61 @@ bp_list = list_to_objects(boarding_pass_list)
 # for j in bp_list:
 #     print(j.code, j.row, j.col, j.seat_id)
 
+### FIRST PART---------------------------------
 id_list = [k.seat_id for k in bp_list]
 id_list.sort()
-
 print("First part: ", id_list[-1])  # 850
+### -------------------------------------------
 
+### SECOND PART -------------------------------
 for index in range(len(id_list)-1):
     if id_list[index] + 1 != id_list[index+1]:
-        print("Second part: ", id_list[index] + 1)
+        print("Second part: ", id_list[index] + 1)  # 599
+### -------------------------------------------
 
+
+# region ---------- This is not part of the puzzle. It's unfinished. Ignore. ----------
+print("************************************************")
+
+def find_my_boarding_pass(boarding_list):
+    my_row_dict = {}
+    my_row : int
+    my_col : int
+    my_boarding_pass  = ""
+
+    for entry in boarding_list:
+        my_row = entry.row
+        if my_row in my_row_dict:
+            my_row_dict[my_row].append(entry.col)
+        else:
+            my_row_dict[my_row] = [entry.col]
+    for key in my_row_dict:
+        if len(my_row_dict[key]) != 8:
+            for i in range(0, 8):
+                if i not in my_row_dict[key]:
+                    if key * 8 + i == 599:  # using the solution for the second star
+                        my_row = key
+                        my_col = i
+                        print(my_row, my_col)
+    current_max_row = MAX_ROW
+    current_max_col = MAX_COL
+    while len(my_boarding_pass) < 8:
+        if my_row > current_max_row/2:
+            my_boarding_pass += "B"
+            current_max_row = current_max_row + current_max_row/2
+        else:
+            my_boarding_pass += "F"
+            current_max_row /= 2
+    while len(my_boarding_pass) < 11:
+        if my_col > current_max_col/2:
+            my_boarding_pass += "R"
+            current_max_col = current_max_col + current_max_col/2
+        else:
+            my_boarding_pass += "L"
+            current_max_col /= 2
+
+    return my_boarding_pass
+
+test = BoardingPass(find_my_boarding_pass(bp_list))
+print(test.code, test.row, test.col, test.seat_id)
+# endregion ---------------------------------------------------------------------------
