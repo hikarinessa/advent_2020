@@ -1,6 +1,9 @@
+# https://adventofcode.com/2020/day/7
 import re
+import os
+import sys
 
-with open("advent_07_input.txt", "r") as raw_input:
+with open(os.path.join(sys.path[0], "Inputs/advent_07_input.txt"), "r") as raw_input:
     INPUT = raw_input.read().splitlines()
 
 MY_BAG = "shiny gold"
