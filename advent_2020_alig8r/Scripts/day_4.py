@@ -6,20 +6,19 @@ with open(os.path.join(sys.path[0], "../Inputs/input_day_4.txt"), "r") as my_inp
     _INPUT_1 = _INPUT_1.split("\n\n")
 
 class Passport:
-    
+    """I am description"""
 
     def __init__(self, passport_data):
         self.passport_dict = {
-            "byr": self.__validate_year__(passport_data.get("byr"), 1920, 2002),
-            "iyr": self.__validate_year__(passport_data.get("iyr"), 2010, 2020),
-            "eyr": self.__validate_year__(passport_data.get("eyr"), 2020, 2030),
-            "hgt": self.__validate_hgt__(passport_data.get("hgt")),
-            "hcl": self.__validate_hcl__(passport_data.get("hcl")),
-            "ecl": self.__validate_ecl__(passport_data.get("ecl")),
-            "pid": self.__validate_pid__(passport_data.get("pid")), 
-            "cid": self.__validate_cid__(passport_data.get("cid"))
+            "byr": self._validate_year_(passport_data.get("byr"), 1920, 2002),
+            "iyr": self._validate_year_(passport_data.get("iyr"), 2010, 2020),
+            "eyr": self._validate_year_(passport_data.get("eyr"), 2020, 2030),
+            "hgt": self._validate_hgt_(passport_data.get("hgt")),
+            "hcl": self._validate_hcl_(passport_data.get("hcl")),
+            "ecl": self._validate_ecl_(passport_data.get("ecl")),
+            "pid": self._validate_pid_(passport_data.get("pid")), 
+            "cid": self._validate_cid_(passport_data.get("cid"))
             }
-
 
 
     def check_status(self):
@@ -29,14 +28,14 @@ class Passport:
             return True
 
 
-    def __validate_year__(self, issue_year, min, max):
+    def _validate_year_(self, issue_year, min, max):
         if len(issue_year) == 4 and int(issue_year) >= min and int(issue_year) <= max:
             return issue_year
         else:
             return "INVALID"
     
 
-    def __validate_hgt__(self, height):
+    def _validate_hgt_(self, height):
         if height[3:] == "cm" and int(height[:3]) >= 150 and int(height[:3]) <= 193:
             return height
         elif height[3:] == "in" and int(height[:3]) >= 59 and int(height[:3]) <= 76:
@@ -45,7 +44,7 @@ class Passport:
             return "INVALID"
 
 
-    def __validate_hcl__(self, hair_color):
+    def _validate_hcl_(self, hair_color):
             hex_chars = "0123456789abcdef"
             if hair_color[0] == "#" and len(hair_color[1:]) == 6:
                 for char in hair_color[1:]:
@@ -58,7 +57,7 @@ class Passport:
                 return "INVALID"        
 
 
-    def __validate_ecl__(self, eye_color):
+    def _validate_ecl_(self, eye_color):
         _VALID_EYE_COLORS = ["amb", "blu", "brn", "gry", "grn", "hzl", "oth"]
         if any(eye_color in col for col in _VALID_EYE_COLORS):
             return eye_color
@@ -66,18 +65,22 @@ class Passport:
             return "INVALID"
 
 
-    def __validate_pid__(self, passport_id):
-        if len(passport_id) == 9:
-            return passport_id
-        else:
-            return "INVALID"
+    def _validate_pid_(self, passport_id):
+        return (passport_id if len(passport_id) == 9 else "Missing")
+
+
+        # if len(passport_id) == 9:
+        #     return passport_id
+        # else:
+        #     return "INVALID"
     
 
-    def __validate_cid__(self, country_id):
+    def _validate_cid_(self, country_id):
         if country_id:
             return country_id
         else:
-            return "MISSING"
+            return "MISSING" 
+
 
 
 #----------START------------#
@@ -105,3 +108,4 @@ for passport_data in _INPUT_1:
         
 print("Validated Passports 1:", _OUTPUT_1, passports)
 print("Validated Passports 2:", _OUTPUT_2, passports)
+print(Passport.__doc__)
