@@ -6,13 +6,7 @@ with open(os.path.join(sys.path[0], "../Inputs/input_day_11.txt"), "r") as my_in
     #print(_INPUT_1)
 
 
-
 class Map:
-    __Map_Change_Counter = 0
-    # __stored_results_1 = {}
-    # __stored_results_2 = {}
-    # __compare = False
-
     def __init__(self, input):
         self._COORDINATE_MAP = self.__create_map__(input)
         self._temp_new_map = {}
@@ -75,7 +69,7 @@ class Map:
             self._temp_new_map[seat_coord] = "L"
 
 
-    def _run_seat_shuffle_(self):
+    def run_seat_shuffle(self):
         for coordinate in self._COORDINATE_MAP:
             self._temp_new_map[coordinate] = self._COORDINATE_MAP[coordinate]
 
@@ -87,40 +81,16 @@ class Map:
                 self._temp_new_map[coordinate] == "."
         
         self._COORDINATE_MAP = self._temp_new_map
-
-        #######
-        self.__Map_Change_Counter += 1
-
-        print(self.__Map_Change_Counter, Counter(self._COORDINATE_MAP.values()))
-
-        # print(self.__Map_Change_Counter % 2)
-
-        # if self.__Map_Change_Counter % 2 == 0:
-        #     self.__stored_results_1 = dict(Counter(self._COORDINATE_MAP.values()))
-        # elif self.__Map_Change_Counter % 2 == 1:
-        #     self.__stored_results_2 = dict(Counter(self._COORDINATE_MAP.values()))
-
-   
-
-        # if self.__Map_Change_Counter > 3 and self.__Map_Change_Counter % 2 == 0:
-        #     if counted["#"] == self.__stored_results_1["#"]:
-        #         print("SAME", counted["#"], self.__stored_results_1["#"])
-        # if self.__Map_Change_Counter > 2  and self.__Map_Change_Counter % 2 == 1:
-        #     if counted["#"] == self.__stored_results_2["#"]:
-        #         print("SAME", counted["#"], self.__stored_results_2["#"])
-
-        #####
         self._temp_new_map = {}
         counted = dict(Counter(self._COORDINATE_MAP.values()))
         return counted["#"]
-
     
               
 my_map = Map(_INPUT_1)
-_OUTPUT_1 = 0
+_OUTPUT_1 = 0 # 2334
 
 while True:
-    if _OUTPUT_1 == my_map._run_seat_shuffle_():
+    if _OUTPUT_1 == my_map.run_seat_shuffle():
         print("We done here", _OUTPUT_1)
         break
     
