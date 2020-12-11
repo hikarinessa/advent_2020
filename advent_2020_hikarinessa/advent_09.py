@@ -4,7 +4,7 @@ import sys
 
 with open(os.path.join(sys.path[0], "Inputs/advent_09_input.txt"), "r") as raw_input:
     INPUT = raw_input.read().splitlines()
-    INPUT = [int(i) for i in INPUT]  # preamble 25
+    INPUT = [int(i) for i in INPUT]
 PREAMBLE = 25
 # Test values:
 TEST_INPUT = [35, 20, 15, 25, 47, 40, 62, 55, 65, 95, 102, 117, 150, 182, 127, 219, 299, 277, 309, 576]
@@ -36,7 +36,7 @@ def find_sum(nr, preamble_list):
 
 
 # What is the first number that is not the sum of two of the 25 numbers before it?
-def find_first_outlier(nr_list, preamble):
+def find_first_outlier(nr_list : list, preamble : int):
     for i in range(len(nr_list)):
         if i < preamble:
             pass
