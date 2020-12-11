@@ -2,24 +2,25 @@ import os
 import sys
 
 _INPUT =  open(os.path.join(sys.path[0], "../Inputs/input_day_1.txt"), "r")
-_NUMBERS = []
-_OUTPUT = 0
+_output = 0
+_number = []
+
 
 for line in _INPUT:
     number = int(line)
-    _NUMBERS.append(number)
+    _number.append(number)
 
-for num in range(0, len(_NUMBERS)):
-    remaining_numbers = _NUMBERS[num:]
+for num in range(0, len(_number)):
+    remaining_number = _number[num:]
 
-    for comparer in range(0, len(remaining_numbers)):
-        remaining_numbers_2 = remaining_numbers[comparer:]
+    for comparer in range(0, len(remaining_number)):
+        remaining_number_2 = remaining_number[comparer:]
 
-        for comparer_2 in remaining_numbers_2:
+        for comparer_2 in remaining_number_2:
 
-            if int(_NUMBERS[num]) + int(remaining_numbers[comparer]) + int(comparer_2)== 2020: 
-                print(_NUMBERS[num], remaining_numbers[comparer], comparer_2, "woop")
-                _OUTPUT = _NUMBERS[num] * remaining_numbers[comparer] * comparer_2
+            if int(_number[num]) + int(remaining_number[comparer]) + int(comparer_2)== 2020: 
+                print(_number[num], remaining_number[comparer], comparer_2, "woop")
+                _OUTPUT = _number[num] * remaining_number[comparer] * comparer_2
 
 print(_OUTPUT)
     

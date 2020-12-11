@@ -1,4 +1,8 @@
-with open("advent_06_input.txt", "r") as raw_input:
+# https://adventofcode.com/2020/day/6
+import os
+import sys
+
+with open(os.path.join(sys.path[0], "Inputs/advent_06_input.txt"), "r") as raw_input:
     INPUT = raw_input.read().split("\n\n")
 
 for i in range(len(INPUT)):

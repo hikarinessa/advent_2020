@@ -10,18 +10,14 @@ _OUPUT_1 = 0
 _OUPUT_2 = 0
 
 for group in _INPUT_1:
+    group = group.split("\n")
     saved_answer = []
     saved_people = []
-    group = group.split("\n")
 
     #---------- Part 1 ------------#
     for person in group:
         saved_people.append(person)
-
-        for answer in person:
-            if answer not in saved_answer:
-                saved_answer.append(answer)
-    
+        saved_answer += [answer for answer in person if answer not in saved_answer]    
     _OUPUT_1 += len(saved_answer)
 
     #---------- Part 2 ------------#
