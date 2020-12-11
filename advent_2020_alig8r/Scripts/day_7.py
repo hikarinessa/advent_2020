@@ -2,10 +2,17 @@ import os
 import sys
 import math
 with open(os.path.join(sys.path[0], "../Inputs/input_day_7.txt"), "r") as my_input:
+    """
+    Line Example: dark cyan bags contain 2 wavy beige bags.
+    - remove the "."
+    - strip " bags" and " bag"
+    - 
+    """
     _INPUT_1 = my_input.read().replace(".", "")
     _INPUT_1 = _INPUT_1.replace(" bags", "").replace(" bag", "").split("\n")
     _INPUT_1 = [i.split(" contain ") for i in _INPUT_1]
     #print(_INPUT_1)
+    
 
 final_gold_bags = 0
 _OUTPUT_1 = 0
@@ -14,7 +21,15 @@ bags_that_directly_contain_shiny_gold = []
 contain_shiny_gold = []
 
 def get_contains_bag(bag_to_scan, bag_to_look_for):
-    #compare if bag_to_scan is same as bag_to_look_for
+    """[summary]
+
+    Args:
+        bag_to_scan ([type]): [description]
+        bag_to_look_for ([type]): [description]
+
+    Returns:
+        [type]: [description]
+    """
     if bag_to_scan[0] == bag_to_look_for[0] and bag_to_scan[1] == bag_to_look_for[1]:
         print("FOUND ONE!:", bag_to_scan, "IN: ", bag_to_look_for)
         return True
@@ -48,7 +63,6 @@ for i in _INPUT_1:
     
     bag_dictionary[main_bag[0]] = contents_dict
 
-#print(bag_dictionary)
 contain_shiny_gold_list = bags_that_directly_contain_shiny_gold
 recurse = True
 
