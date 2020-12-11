@@ -94,7 +94,8 @@ while True:
         print("We done here", _OUTPUT_1)
         break
     
-    _OUTPUT_1 = my_map._run_seat_shuffle_()
+    _OUTPUT_1 = my_map.run_seat_shuffle()
+    
     
 
     
