@@ -82,7 +82,7 @@ def data_to_passports(raw_data):
     one_string_per_pass = one_string_per_pass.split("  ")
 
     for i in range(len(one_string_per_pass)):
-        parsed_entry = re.split(":| ", one_string_per_pass[i])
+        parsed_entry = re.split("[: ]", one_string_per_pass[i])
         new_pass = Passport(i)
         for j in range(0, len(parsed_entry), 2):
             setattr(new_pass, parsed_entry[j], parsed_entry[j+1])

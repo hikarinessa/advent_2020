@@ -26,10 +26,6 @@ SIMPLE_INPUT = [0] + SIMPLE_INPUT
 # endregion -------------------------------
 
 
-# def get_device_joltage(my_list):
-#     return my_list[-1] + 3
-
-
 # Find a chain that uses all of your adapters
 # What is the number of 1-jolt differences multiplied by the number of 3-jolt differences?
 def first_part(my_ordered_list):
