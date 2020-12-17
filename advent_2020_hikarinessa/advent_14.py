@@ -2,6 +2,7 @@
 import os
 import sys
 import re
+from utilities import *
 
 with open(os.path.join(sys.path[0], "Inputs/advent_14_input.txt"), "r") as raw_input:
     INPUT = raw_input.read().splitlines()
@@ -26,7 +27,7 @@ def prep_input(my_input):
     return mask_list, instruction_list
 
 
-# part 1 ---------------------------------------------------------------------------------------
+# Part 1 ---------------------------------------------------------------------------------------
 def parse_instruction_val(instruction):
     instr = re.search("\[(\d+)\] = (\d+)", instruction)
     mem = int(instr.group(1))
@@ -60,10 +61,7 @@ def first_part(my_input):
     return added_values
 
 
-print("First part:", first_part(INPUT))  # 14954914379452
-
-
-# part 2 ---------------------------------------------------------------------------------------
+# Part 2 ---------------------------------------------------------------------------------------
 # TODO Cleanup and optimize the code
 def parse_instruction_mem(instruction):
     instr = re.search("\[(\d+)\] = (\d+)", instruction)
@@ -89,7 +87,6 @@ def store_val(mem_dict, mem, val):
         bina = str(bin(i)[2:])
         while len(bina) < len(bin(var)[2:]):
             bina = '0' + bina
-        # print(bina, bin(var)[2:])
         bina_count = 0
         new_mem = mem
         for i, char in enumerate(mem):
@@ -102,7 +99,6 @@ def store_val(mem_dict, mem, val):
 
 def second_part(my_input):
     mask_list, instruction_list = prep_input(my_input)
-    new_mem = []
     mem_dict = {}
 
     for i, mask in enumerate(mask_list):
@@ -117,5 +113,12 @@ def second_part(my_input):
 
     return added_values
 
+if __name__ == "__main__":
+    start_time = start_timer()
+    print("First part:", first_part(INPUT))  # 14954914379452
+    print_elapsed_time(start_time)
+    print("*"*96)
+    start_time = start_timer()
+    print("Second part:", second_part(INPUT))  # 3415488160714
+    print_elapsed_time(start_time)
 
-print("Second part:", second_part(INPUT))  # 3415488160714

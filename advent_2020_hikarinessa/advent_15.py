@@ -1,4 +1,5 @@
 # https://adventofcode.com/2020/day/15
+from utilities import *
 
 INPUT = [0, 5, 4, 1, 10, 14, 7]
 TEST_INPUT = [0, 3, 6]
@@ -28,5 +29,11 @@ def number_at_index(my_list, index, debug):
     return number
 
 
-print("First part:", number_at_index(INPUT, 2020, False))
-print("Second part:", number_at_index(INPUT, 30000000, False))
+if __name__ == "__main__":
+    start_time = start_timer()
+    print("First part:", number_at_index(INPUT, 2020, False))
+    print_elapsed_time(start_time)
+    print("*"*96)
+    start_time = start_timer()
+    print("Second part:", number_at_index(INPUT, 30000000, False))
+    print_elapsed_time(start_time)
