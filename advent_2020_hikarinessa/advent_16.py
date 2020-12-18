@@ -5,6 +5,7 @@ import re
 from Inputs.advent_16_input import ticket_fields, your_ticket, nearby_tickets
 ticket_fields = ticket_fields.splitlines()
 
+# region ---------------- test inputs ----------------
 # Test fields part 1
 # test_ticket_fields = """class: 1-3 or 5-7
 # row: 6-11 or 33-44
@@ -23,6 +24,7 @@ ticket_fields = ticket_fields.splitlines()
 #                   [15, 1, 5],
 #                   [5, 14, 9],
 #                   [11, 12, 13]]
+# endregion ------------------------------------------
 
 
 def build_valid_values():
@@ -73,9 +75,7 @@ def build_dicts(valid_tickets):
                 if min1 <= valid_tickets[row][col] <= max1 or min2 <= valid_tickets[row][col] <= max2:
                     # print(field_name, "/ row:", row, "col:", col, valid_tickets[row][col])
                     possible_column += 1
-            # print(len(valid_tickets), possible_column)
             if len(valid_tickets) == possible_column:
-                # print("match")
                 possible_columns.append(col)
         my_dict[field_name] = possible_columns
 
@@ -93,15 +93,10 @@ def build_dicts(valid_tickets):
                     checked_values.append(val[0])
                 bob += 1
 
-    counter = 1
     for key, val in my_dict.items():
         my_dict[key] = int(val[0])
-        val = my_dict[key]
-        if 'departure' in key:
-            counter *= your_ticket[val]
-    pprint.pprint(my_dict)
 
-    return counter
+    return my_dict
 
 
 def second_part():
@@ -113,12 +108,17 @@ def second_part():
             if not valid_dict[num]:
                 nearby_valid_tickets[i] = None
     nearby_valid_tickets = [i for i in nearby_valid_tickets if i]
-    build_dicts(nearby_valid_tickets)
+    field_coluns = build_dicts(nearby_valid_tickets)
 
+    counter = 1
+    for key, val in field_coluns.items():
+        if "departure" in key:
+            counter *= your_ticket[val]
 
+    return counter
 
 
 if __name__ == "__main__":
     print("First part:", first_part())  # 21956
-    print("Second part:", second_part())  #
+    print("Second part:", second_part())  # 3709435214239
 
