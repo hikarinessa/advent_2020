@@ -9,6 +9,7 @@ def split (lo, hi):
     half = (hi - lo)/2
     return int(lo), int((lo + half)), int((lo + half + 0.5)), int(hi)
 
+
 def recursive_partition(string, slo, shi, mx:int):
     """ Inputs are the string to parse,
     the bottom half and top half codes for the partition,
@@ -37,16 +38,13 @@ class BoardingPass:
         self.col = self.decode_col()
         self.seat_id = self.get_seat_id()
 
-
     def decode_row(self):
         row_code = self.code[:7]  # BFBFFFF where F lo and B hi
         return recursive_partition(row_code, "F", "B", MAX_ROW)
 
-
     def decode_col(self):
         col_code = self.code[-3:]  # RLR where L lo and R hi
         return recursive_partition(col_code, "L", "R", MAX_COL)
-
 
     def get_seat_id(self):
         return self.row * 8 + self.col
@@ -80,6 +78,7 @@ for index in range(len(id_list)-1):
 
 # region ---------- This is not part of the puzzle. It's unfinished. Ignore. ----------
 print("************************************************")
+
 
 def find_my_boarding_pass(boarding_list):
     my_row_dict = {}
@@ -119,6 +118,7 @@ def find_my_boarding_pass(boarding_list):
             current_max_col /= 2
 
     return my_boarding_pass
+
 
 test = BoardingPass(find_my_boarding_pass(bp_list))
 print(test.code, test.row, test.col, test.seat_id)

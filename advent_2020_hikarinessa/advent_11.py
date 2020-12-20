@@ -26,7 +26,7 @@ def get_adjacency(my_dict: dict, row, col):
     """Given a list, row and column, returns number of empty seats around it"""
     adjacent = 0
     adjacent_list = [(row-1, col-1), (row-1, col), (row-1, col+1),
-                     (row, col-1),                 (row, col+1),
+                      (row, col-1),                 (row, col+1),
                      (row+1, col-1), (row+1, col), (row+1, col+1)]
 
     for i in adjacent_list:
@@ -38,7 +38,7 @@ def get_adjacency(my_dict: dict, row, col):
 
 def get_direction_slot(direction, row, col, n):
     direction_list = [(row-n, col-n), (row-n, col), (row-n, col+n),
-                      (row, col-n),                 (row, col+n),
+                       (row, col-n),                 (row, col+n),
                       (row+n, col-n), (row+n, col), (row+n, col+n)]
     return direction_list[direction]
 

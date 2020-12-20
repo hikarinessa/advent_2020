@@ -113,6 +113,7 @@ def second_part(my_input):
 
     return added_values
 
+
 if __name__ == "__main__":
     start_time = start_timer()
     print("First part:", first_part(INPUT))  # 14954914379452
