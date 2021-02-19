@@ -1,5 +1,4 @@
 # https://adventofcode.com/2020/day/11
-# https://www.reddit.com/r/adventofcode/comments/k52psu/2020_day_10_solutions/
 
 data = """L.LL.LL.LL
 LLLLLLL.LL
@@ -55,7 +54,6 @@ def checkseat(row, column, seats):
     #                 2,0 2,1
     # for seat 1,1 -> 0,0 0,1
     #                 1,0    
-    #                 
     
     seat = seats[row][column]
     skippercolumn, skipperrow = 1,1
@@ -76,7 +74,6 @@ def checkseat(row, column, seats):
         if row == maxrow:
             max[0] = row
             skipperrow = 1
-
         #pp(min, "min")
         #pp(max, "max")
         for irow, row in enumerate(seats[min[0]:max[0]+1]):
@@ -87,19 +84,14 @@ def checkseat(row, column, seats):
                     adjacent_seats.append(column)
                     if column == "L":
                         numberempty += 1
-
                     elif column == "#":
                         numberoccupied += 1
                     else:
                         pass
-
                     #print(column, end="")           
         #print("\n---------")
     else:
-        #print("skipped because there's no seat here")
-        #print("\n---------")
         return "."
-    
     if seat == "L":
         if numberoccupied == 0:
             return "#"
@@ -145,13 +137,8 @@ def checkseatpart2(row, column, seats):
                     else: pass
                 else:
                     hit = True
-                #except:
-                #    break
-                #if hit:
-                 #   break
     else:
         return "."
-
     if seat == "L":
         if numberoccupied == 0:
             return "#"
