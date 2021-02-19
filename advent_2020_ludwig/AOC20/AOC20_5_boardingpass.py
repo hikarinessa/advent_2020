@@ -1,6 +1,9 @@
 # https://adventofcode.com/2020/day/5
-# https://www.reddit.com/r/adventofcode/comments/k52psu/2020_day_05_solutions/
-# The first 7 characters will either be F or B; these specify exactly one of the 128 rows on the plane (numbered 0 through 127). Each letter tells you which half of a region the given seat is in. Start with the whole list of rows; the first letter indicates whether the seat is in the front (0 through 63) or the back (64 through 127). The next letter indicates which half of that region the seat is in, and so on until you're left with exactly one row.
+# The first 7 characters will either be F or B; these specify exactly one of the 128 rows on the 
+# plane (numbered 0 through 127). Each letter tells you which half of a region the given seat is in. 
+# Start with the whole list of rows; the first letter indicates whether the seat is in the front 
+# (0 through 63) or the back (64 through 127). The next letter indicates which half of that region the 
+# seat is in, and so on until you're left with exactly one row.
 
 # For example, consider just the first seven characters of FBFBBFFRLR:
 
@@ -59,6 +62,7 @@ data = [s for s in data.splitlines()]
 
 def h(x):
     return x//2
+    
 max = 128
 register = [[i] for i in data]
 #print(register)

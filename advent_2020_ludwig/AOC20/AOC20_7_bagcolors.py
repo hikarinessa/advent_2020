@@ -1,6 +1,4 @@
 # https://adventofcode.com/2020/day/7
-# https://www.reddit.com/r/adventofcode/comments/k52psu/2020_day_07_solutions/
-# 
 
 data = """light red bags contain 1 bright white bag, 2 muted yellow bags.
 dark orange bags contain 3 bright white bags, 4 muted yellow bags.
@@ -11,6 +9,7 @@ dark olive bags contain 3 faded blue bags, 4 dotted black bags.
 vibrant plum bags contain 5 faded blue bags, 6 dotted black bags.
 faded blue bags contain no other bags.
 dotted black bags contain no other bags."""
+
 # These rules specify the required contents for 9 bag types. In this example, every faded blue bag is empty, every vibrant plum bag contains 11 bags (5 faded blue and 6 dotted black), and so on.
 
 # You have a shiny gold bag. If you wanted to carry it in at least one other bag, 

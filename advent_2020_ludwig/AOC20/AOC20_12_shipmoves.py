@@ -28,7 +28,6 @@ F11"""
 # Figure out where the navigation instructions lead. What is the Manhattan distance between 
 # that location and the ship's starting position?
 
-
 debug = False
 printit = True
 def pp(subject, name = "", override = False): #prints anything with a name as string 
@@ -77,7 +76,7 @@ for s in data:
     elif dir == "S":
         waypoint_southnorth -= num
     elif dir == "L":
-        if num == 90:
+        if num == 90: #... looks a bit tedious here
             waypoint_westeast = -wp_sn_mem
             waypoint_southnorth = wp_we_mem
         elif num == 180:
@@ -103,7 +102,6 @@ southnorth = abs(southnorth)
 manhattandist = westeast + southnorth
 
 pp(manhattandist, "Manhattan Distance Part 2")
-
 
 '''
 pp(data, "data")
@@ -159,4 +157,4 @@ southnorth = abs(southnorth)
 
 manhattandist = westeast + southnorth
 
-pp(manhattandist, "mamhattat")
+pp(manhattandist, "manhattan part 1")

@@ -1,5 +1,4 @@
 # https://adventofcode.com/2020/day/10
-# https://www.reddit.com/r/adventofcode/comments/k52psu/2020_day_10_solutions/
 
 # In addition, your device has a built-in joltage adapter rated for 3 jolts higher than 
 # the highest-rated adapter in your bag. (If your adapter list were 3, 9, and 6, your device's 
@@ -112,7 +111,6 @@ for group in consecutive_groups(skippables):
 
 for section in skippable_sections:
     x = len(section)
-    # y = (2**(x-1)-x+1)
     if x == 5:       # --------hardcoded solutions :DDDD
         y = 19
     if x == 4:
@@ -123,7 +121,6 @@ for section in skippable_sections:
         y = 4
     if x == 1:
         y = 2
-        #permutations += y
     permutations *= y
 
 pp(skippable_sections, "array of ones sections")

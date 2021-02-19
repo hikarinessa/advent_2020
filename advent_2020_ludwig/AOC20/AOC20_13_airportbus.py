@@ -29,10 +29,6 @@ data = """939
 # the number of minutes you'll need to wait for that bus?
 
 # PART 2 ----------
-
-
-
-
 # The shuttle company is running a contest: one gold coin for anyone that can find the earliest 
 # timestamp such that the first bus ID departs at that time and each subsequent listed bus ID 
 # departs at that subsequent minute. (The first line in your input is no longer relevant.)
@@ -53,6 +49,7 @@ data = """939
 # In this example, the earliest timestamp at which this occurs is 1068781
 
 from operator import itemgetter
+
 debug = False
 printit = False
 def pp(subject, name = "", override = False): #prints anything with a name as string 
@@ -63,11 +60,11 @@ def pp(subject, name = "", override = False): #prints anything with a name as st
 print("\n----------------------------------")   # reading file
 
 file = "advent_2020_ludwig/AOC20/data_aoc20_12.txt"
-''
+
 if not debug:
     data = """1000507
 29,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,37,x,x,x,x,x,631,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,13,19,x,x,x,23,x,x,x,x,x,x,x,383,x,x,x,x,x,x,x,x,x,41,x,x,x,x,x,x,17"""
-''
+
 data = [s for s in data.split("\n")]
 earliestdeparture = int(data[0])
 pp(earliestdeparture, "earliestdep")
@@ -132,14 +129,8 @@ time2 = 15
 for i, bus in enumerate(bussesp2):
     busid, busindex, bustime = bus[0], bus[1], bus[2]
     pp(bus, "--bus to check")
-    #while bustime <= time:
-        #   bustime += busid
-        #  pp(bustime, "---increasing bustime")
     if busindex > 0:
-        #busbeforetime = bussesp2[i-1][2]
-        #while bustime < busbeforetime or bustime <= (firstbustime+busindex):
-            #   bustime += busid
-        while (time + busindex) % busid != 0:
+        while (time + busindex) % busid != 0:  # apparently easy with math \_[##]_/
             time += timestep
         timestep *= busid
     else:
@@ -147,7 +138,7 @@ for i, bus in enumerate(bussesp2):
 
 pp(time, "final time", True)
 
-'''
+'''# ------Graveyard of the brute force approach.. Ran for an hour, and not even close to figuring it out.
 while not solutionfound:
 #while time2 != time:
 #while time < 200000000000000:

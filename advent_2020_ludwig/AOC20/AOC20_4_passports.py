@@ -1,5 +1,4 @@
 # https://adventofcode.com/2020/day/4
-# https://www.reddit.com/r/adventofcode/comments/k52psu/2020_day_04_solutions/
 # The automatic passport scanners are slow because they're having trouble detecting which 
 # passports have all required fields. The expected fields are as follows:
 
@@ -77,16 +76,15 @@ datareg = [s.replace("\n", " ") for s in data.split("\n\n")]
 # for dumb
 data = [sorted(s.replace("\n", " ").split()) for s in data.split("\n\n")]
 
-
 def checkpassport(i):
-    valid = False
+    valid = False 
     if re.search(r"byr:19[2-9]\d|byr:200[0-2]", i) and \
     re.search(r"iyr:201\d|iyr:2020", i) and \
     re.search(r"eyr:202\d|eyr:2030", i) and \
     re.search(r"hgt:1[5-8]\dcm|hgt:19[0-3]cm|hgt:59in|hgt:6\din|hgt:7[0-6]in", i) and \
     re.search(r"hcl:#[0-9a-f]{6}", i) and \
     re.search(r"ecl:(amb|blu|brn|gry|grn|hzl|oth)", i) and \
-    re.search(r"pid:[0-9]{9}\b", i):
+    re.search(r"pid:[0-9]{9}\b", i):    # cool way to break looong lines (unfortunately can't comment after)
         valid = True
         # pp(i, "valid passport according to regex")
     return valid
@@ -99,12 +97,10 @@ for p in datareg:
 
 pp(regvalids, "part 2 valids with regex method")
 
-
 passports = []
-#data = [[k.split(":") for k in j] for j in data ]
+# data = [[k.split(":") for k in j] for j in data ]
 data = [j for j in data]
 # data - list of passports, data[x] - passport fields, data[x][y] - pair of field and value
-
 
 for line in data:
     passport = {}
@@ -196,29 +192,19 @@ def checkfields(i, debugprint = False):
 
     return valid
 
-
 valids = 0
 truevalids = 0
 for p in passports:
-
     if "cid" in p:
-        
-        if len(p) == 8:
-            
+        if len(p) == 8:    
             valids += 1
-            if checkfields(p, False):
-                
+            if checkfields(p, False): 
                 truevalids += 1
-
-
     else:
         if len(p) >= 7:
             if checkfields(p, False):
                 truevalids += 1
             valids += 1
-    
-  
-
 
 pp(valids, "number of valid passports")
 pp(truevalids, "number of true valid passports")

@@ -1,5 +1,4 @@
 # https://adventofcode.com/2020/day/9
-# https://www.reddit.com/r/adventofcode/comments/k52psu/2020_day_09_solutions/
 
 # XMAS starts by transmitting a preamble of 25 numbers. After that, each number you receive 
 # should be the sum of any two of the 25 immediately previous numbers. 

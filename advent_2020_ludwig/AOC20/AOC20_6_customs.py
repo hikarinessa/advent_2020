@@ -1,5 +1,4 @@
 # https://adventofcode.com/2020/day/6
-# https://www.reddit.com/r/adventofcode/comments/k52psu/2020_day_06_solutions/
 # 
 # The form asks a series of 26 yes-or-no questions marked a through z. 
 # All you need to do is identify the questions for which anyone in your group answers "yes".

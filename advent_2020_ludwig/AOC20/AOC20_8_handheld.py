@@ -1,5 +1,4 @@
 # https://adventofcode.com/2020/day/8
-# https://www.reddit.com/r/adventofcode/comments/k52psu/2020_day_08_solutions/
 
 # The boot code is represented as a text file with one instruction per line of text. 
 # Each instruction consists of an operation (acc, jmp, or nop) and an argument (a signed number like +4 or -20).
@@ -66,8 +65,6 @@ for index, s in enumerate(data):
 
 pp(data)
 
-# instructions = []
-# index = 0
 accumulator = 0
 part2 = True
 
@@ -81,9 +78,9 @@ def checkboot(bootcode):
     #accumulator = 0
     while index not in instructions:
         instructions.append(index)
-        try:
+        try:    
             d = bootcode[index]
-        except IndexError:
+        except IndexError:  # read somewhere later using exceptions for flow control is not very posh 
             abletoterminate = True
             break
         pp(d, "current instruction")
@@ -110,7 +107,7 @@ print("-------------------------- part 2")
 
 if part2:
     for index, s in enumerate(data):
-        datatemp = copy.deepcopy(data)
+        datatemp = copy.deepcopy(data) # keep running into this copy trap...
         pp(datatemp, "data reset")
         pp(s, "current line to check")
         solutionfound = False
@@ -119,7 +116,6 @@ if part2:
             datatemp[index][0] = "nop"
             pp(datatemp, "changed data")
             if checkboot(datatemp):
-                
                 solutionfound = True
                 pp(solutionfound, "Solution found!")
         elif s[0] == "nop":

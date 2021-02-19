@@ -1,10 +1,10 @@
 # https://adventofcode.com/2020/day/2
-# https://www.reddit.com/r/adventofcode/comments/k52psu/2020_day_02_solutions/
 # For example, suppose you have the following list:
 
 data = """1-3 a: abcde
  1-3 b: cdefg
  2-9 c: ccccccccc"""
+
 # Each line gives the password policy and then the password. 
 # The password policy indicates the lowest and highest number of times a given 
 # letter must appear for the password to be valid. For example, 1-3 a means that 
@@ -44,8 +44,6 @@ if not debug:
     with open(file) as f:
         data = f.read()
 data = [s.split() for s in data.splitlines()]
-# pp(data, data)
-# pp(len(data), "Items in data")
 
 valids = 0
 
@@ -61,11 +59,6 @@ for i in range(len(data)):
     if min <= count <= max:
         valid = True
         valids += 1
-    # pp(s, "i")
-    # pp(min, "min")
-    # pp(max, "max")
-    # pp(count, "count")
-    # pp(valid, "valid")
 
 print("Part 1: The database contains ", valids, "valid passwords")
 
@@ -84,11 +77,5 @@ for i in range(len(data)):
     if matches == 1:
         valid = True
         valids += 1
-    # pp(s, "i")
-    # pp(pos1, "pos1")
-    # pp(pos2, "pos2")
-    # pp(matches, "matches")
-    # pp(valid, "valid")
-
 
 print("Part 2: The database contains ", valids, "valid passwords")

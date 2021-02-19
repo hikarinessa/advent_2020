@@ -1,7 +1,6 @@
 
 # https://adventofcode.com/2020/day/3
 # 
-# 
 # the same pattern repeats to the right many times
 # You start on the open square (.) in the top-left corner and need 
 # to reach the bottom (below the bottom-most row on your map).
@@ -33,7 +32,7 @@ data = """..##.......
 debug = False 
 printit = True
 def pp(subject, name): #prints anything with a name as string 
-    if debug or print:
+    if debug or printit:
         #print()
         print(name, ": ", subject)
 

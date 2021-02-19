@@ -36,7 +36,7 @@ def pp(subject, name = "", override = False): #prints anything with a name as st
     if debug or printit or override:
         #print("\n", name, ": ", subject)
         print(name, ": ", subject)
-def ppp(subject, name = "", override = False): #prints anything with a name as string 
+def ppp(subject, name = "", override = False): #prints list entries
     if debug or printit or override:
         #print("\n", name, ": ", subject)
         print(name, ": ")
@@ -90,8 +90,6 @@ for i in memory:
 pp(result, "RESULT PART I", True)
 
 #------------------part2 
-
-
 
 def bitmaskadd(id, mask):
     final = []
