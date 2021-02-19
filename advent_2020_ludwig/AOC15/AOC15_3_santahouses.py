@@ -11,7 +11,7 @@
 # ^>v< delivers presents to 4 houses in a square, including twice to the house at his starting/ending location.
 # ^v^v^v^v^v delivers a bunch of presents to some very lucky children at only 2 houses.
 
-with open("/Users/plath/GameDev/Code/AOC/AOC15/santatravels.txt") as f:
+with open("advent_2020_ludwig/AOC15/santatravels.txt") as f:
     data = f.read()
 
 print(data)

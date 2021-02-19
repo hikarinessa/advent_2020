@@ -49,7 +49,7 @@ def pp(subject, name): #prints anything with a name as string
 
 print("\n----------------------------------")   # reading file
 
-file = "AOC20/data_aoc20_5.txt"
+file = "advent_2020_ludwig/AOC20/data_aoc20_5.txt"
 if not debug:
     with open(file) as f:
         data = f.read()

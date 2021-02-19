@@ -10,7 +10,7 @@
 total = 0
 ribbon_total = 0
 
-with open("/Users/plath/GameDev/Code/AOC/AOC15/elvesdata.txt") as f:
+with open("advent_2020_ludwig/AOC15/elvesdata.txt") as f:
     data = f.readlines()
 
 print(data)

@@ -12,7 +12,7 @@
 # like xyx, abcdefeghi (efe), or even aaa.
 
 print()
-with open("AOC15/nicenaughty.txt") as f:
+with open("advent_2020_ludwig/AOC15/nicenaughty.txt") as f:
     data = f.readlines()
 
 # print(data)

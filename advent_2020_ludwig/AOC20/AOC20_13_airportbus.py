@@ -62,7 +62,7 @@ def pp(subject, name = "", override = False): #prints anything with a name as st
 
 print("\n----------------------------------")   # reading file
 
-file = "AOC20/data_aoc20_12.txt"
+file = "advent_2020_ludwig/AOC20/data_aoc20_12.txt"
 ''
 if not debug:
     data = """1000507

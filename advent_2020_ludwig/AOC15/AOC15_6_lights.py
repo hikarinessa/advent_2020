@@ -26,7 +26,7 @@ print("----------------------------------------------------------")
 
 #import bookmarks as bm
 #file = bm.FileBookmark("lightsfile").path
-file = "AOC15/lightsdata.txt"
+file = "advent_2020_ludwig/AOC15/lightsdata.txt"
 with open(file) as f:
     data = f.read().splitlines()
 

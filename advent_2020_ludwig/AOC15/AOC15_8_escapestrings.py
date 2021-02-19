@@ -28,9 +28,9 @@ def pp(subject, name): #prints anything with a name as string
         print(f"{name}: {subject}")
 
 print("\n----------------------------------")   # reading file
-file = "AOC15/escapestrings.txt"
+file = "advent_2020_ludwig/AOC15/escapestrings.txt"
 if debug:
-    file = "AOC15/escapestringstest.txt"
+    file = "advent_2020_ludwig/AOC15/escapestringstest.txt"
 
 with open(file) as f:
     data = f.read()

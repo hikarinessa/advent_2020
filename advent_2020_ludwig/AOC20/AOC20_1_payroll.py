@@ -20,7 +20,7 @@ def pp(subject, name): #prints anything with a name as string
         print(f"{name}: {subject}")
 
 print("\n----------------------------------")   # reading file
-file = "AOC20/data_aoc20_1.txt"
+file = "advent_2020_ludwig/AOC20/data_aoc20_1.txt"
 
 
 
