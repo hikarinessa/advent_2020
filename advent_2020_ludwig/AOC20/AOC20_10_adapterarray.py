@@ -29,8 +29,6 @@ data = """16
 # charging outlet, the adapters, and your device. 
 # What is the number of 1-jolt differences multiplied by the number of 3-jolt differences?
 
-# part 2
-# 
 from more_itertools import consecutive_groups
 
 debug = False
@@ -74,8 +72,6 @@ for i in range(len(data[1:])):
         print("somethings wrong")
         break
         
-
-
 pp(len(ones), "number of 1 jolt differences", True)
 pp(len(twos), "number of 2 jolt differences", True)
 pp(len(threes), "number of 3 jolt differences", True)
@@ -107,7 +103,6 @@ pp(doubleones, "double ones")
 pp(tripleones, "triple ones")
 pp(skippables, "skippables")
 pp(len(skippables), "number of skippables")
-
 
 skippable_sections = []
 sections_index = 0
@@ -178,12 +173,6 @@ pp(permutations, "permutations")
   3 5
 
 '''
-
-
-        
-            
-
-
 
 helper = 19208
 helper = 2**(5-1)-5
