@@ -78,13 +78,13 @@ data = [sorted(s.replace("\n", " ").split()) for s in data.split("\n\n")]
 
 def checkpassport(i):
     valid = False 
-    if re.search(r"byr:19[2-9]\d|byr:200[0-2]", i) and \
-    re.search(r"iyr:201\d|iyr:2020", i) and \
-    re.search(r"eyr:202\d|eyr:2030", i) and \
-    re.search(r"hgt:1[5-8]\dcm|hgt:19[0-3]cm|hgt:59in|hgt:6\din|hgt:7[0-6]in", i) and \
-    re.search(r"hcl:#[0-9a-f]{6}", i) and \
-    re.search(r"ecl:(amb|blu|brn|gry|grn|hzl|oth)", i) and \
-    re.search(r"pid:[0-9]{9}\b", i):    # cool way to break looong lines (unfortunately can't comment after)
+    if (re.search(r"byr:19[2-9]\d|byr:200[0-2]", i)
+            and re.search(r"iyr:201\d|iyr:2020", i)
+            and re.search(r"eyr:202\d|eyr:2030", i)
+            and re.search(r"hgt:1[5-8]\dcm|hgt:19[0-3]cm|hgt:59in|hgt:6\din|hgt:7[0-6]in", i)
+            and re.search(r"hcl:#[0-9a-f]{6}", i)
+            and re.search(r"ecl:(amb|blu|brn|gry|grn|hzl|oth)", i)
+            and re.search(r"pid:[0-9]{9}\b", i)):    # changed from / to parentheses
         valid = True
         # pp(i, "valid passport according to regex")
     return valid

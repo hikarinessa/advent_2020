@@ -55,7 +55,7 @@ for i in range(len(data)):
     valid = False
     min, max = s[0]
     s[1] = s[1][0]
-    count = s[2].count(s[1])
+    count = s[2].count(s[1]) # the trick is here
     if min <= count <= max:
         valid = True
         valids += 1
