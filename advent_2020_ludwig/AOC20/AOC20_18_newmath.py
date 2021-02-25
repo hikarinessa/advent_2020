@@ -21,7 +21,7 @@ data = "4 + (5 + (5 * 5 + 3 + 2) + (6 + 4 * 9 * 2 * 8) * 6 + (7 * 5 * 2) * (2 * 
 # nearby tickets: the values 4, 55, and 12 are are not valid for 
 # any field. Adding together all of the invalid values produces your 
 # ticket scanning error rate: 4 + 55 + 12 = 71.
-from ast import Index
+
 import re
 debug = False
 printit = False
