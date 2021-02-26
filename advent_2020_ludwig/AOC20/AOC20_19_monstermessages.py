@@ -16,7 +16,7 @@ aaaabbb"""
 import re
 debug = False
 printit = False
-part2 = True
+part2 = False
 
 def pp(subject, name = "", override = False): #prints anything with a name as string 
     if debug or printit or override:
@@ -48,18 +48,21 @@ if part2:
     data = data.replace("8: 42", "8: 42 | 42 8")
     data = data.replace("11: 42 31", "11: 42 31 | 42 11 31")
 data = [s.split("\n") for s in data.split("\n\n")]
+
 rulesint = []
+
 for i in data[0]:
     rulesint.append(i.split(": "))
+
 for index, i in enumerate(rulesint):
     rulesint[index] = int(rulesint[index][0])
 
-drules = {}
-rulestemp = data[0]
+dict_of_rules = {}
+rules_temp = data[0]
 messages = data[1]
 rules = []
 
-for i, rule in enumerate(rulestemp):
+for i, rule in enumerate(rules_temp): # painful deciphering of the input..
     rules.append([])
 
     if "|" in rule:
@@ -68,7 +71,7 @@ for i, rule in enumerate(rulestemp):
         for j in range(2):
             rules[i][j] = rules[i][j].split()
 
-        if ":" in rules[i][0]:
+        if ":" in rules[i][0]:  # getting of leading :s in higher rule indices
             del rules[i][0][0]
 
         for j in range(2):
@@ -81,18 +84,19 @@ for i, rule in enumerate(rulestemp):
             del rules[i][0]
         
         if rules[i][0].startswith("\""):
-            rules[i][0] = rules[i][0].replace("\"", "")
+            rules[i][0] = rules[i][0].replace("\"", "") # getting rid of the \s in a and b entries
         else:
             rules[i] = list(map(int, rules[i]))
             
         rules[i] = [rules[i]]
         
-    drules[rulesint[i]] = rules[i]
+    dict_of_rules[rulesint[i]] = rules[i]
 
-srules = {}
-def solve():
-    for i in drules:
-        rule = drules[i]
+solved_rules = {}
+
+def solve():  # converts the rule to a string with every number replaced by the related letters (if they exist)
+    for i in dict_of_rules:
+        rule = dict_of_rules[i]
         pp(i), pp(rule)
         string = ""
 
@@ -100,46 +104,42 @@ def solve():
             solved = 0
 
             if block_index == 1:
-                string += "|"
+                string += "|"   # inserting pipe back (needed to delete when generating the rules list)
 
             for ref_index, ref in enumerate(block):
-                if ref in srules:
-                    ref = srules[ref]
+                if ref in solved_rules:
+                    ref = solved_rules[ref]
                     
                     if "a" or "b" in ref and len(ref) > 0:
                         string += ref
                         solved += 1
                     
-                        
                 elif ref == "a" or ref == "b":
-                    if i in srules:
-                        string += ref 
-                    else:
-                        string += ref 
+                    string += ref 
            
         if len(string) > 0:
             if string.endswith(("|", ",")):
                 string = string[:-1]
 
             if len(string) > 1:
-                string = "(" + string + ")"   
+                string = "(" + string + ")"  #wrapping the resulting group in parentheses to use as regex
 
-            srules[i] = string        
+            solved_rules[i] = string # saving deciphered rule to solved.        
         
-        if i in srules:
-            pp(srules[i], "srules entry")
+        if i in solved_rules:
+            pp(solved_rules[i], "solved_rules entry")
     
 
 runs = 0
-while runs <= len(drules):
+while runs <= len(dict_of_rules):
     solve()
     runs += 1
 
-pp(srules[0], "rule 0 result", True)
+pp(solved_rules[0], "rule 0 result", True)
 
-zero = re.compile("^" + srules[0] + "$")
+zero = re.compile("^" + solved_rules[0] + "$")
 matches = 0
-for message in data[1]:
+for message in messages:
     zeromatch = zero.match(message)
     if zeromatch is not None:
         matches += 1

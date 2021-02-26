@@ -10,9 +10,9 @@ data = """1 + 2 * 3 + 4 * 5 + 6
 data = "4 + (5 + (5 * 5 + 3 + 2) + (6 + 4 * 9 * 2 * 8) * 6 + (7 * 5 * 2) * (2 * 8 * 2)) + (8 * 7 + 7) * 6 * 9 * (5 + 9)"
 
 import re
-debug = False
+debug = True
 printit = False
-part2 = False
+part2 = True
 
 
 def pp(subject, name = "", override = False): #prints anything with a name as string 
@@ -42,67 +42,63 @@ data = [s.replace(" ", "") for s in data.split("\n")]
 ppp(data)
 # a 71 b 51
 result = 0
-inner = re.compile(r"[(](?:\d+[+*])+\d+[)]")
-plus = re.compile(r"\D*(\d+[+]\d+)\D*")
+inner = re.compile(r"[(](?:\d+[+*])+\d+[)]") # pattern to find the innermost parentheses
+plus = re.compile(r"\D*(\d+[+]\d+)\D*") # pattern to find groups of additions to solve first for part 2
 pork = inner.findall(data[0])
-pork = plus.findall(data[0])
-pp(pork, "pork")
-part2 = True
+if part2:
+    pork = plus.findall(data[0])
+pp(pork, "test of elements matching the regex", True)
+
 
 def calc(equation, returnString):
     result = ""
     parentheses = 0
-    plusses = []
     equation = equation.replace("(", "")
-    equation = equation.replace(")", "")
+    equation = equation.replace(")", "") # delete original parentheses
+
     if part2:
         while "+" in equation:
-            plus_match = plus.search(equation)
+            plus_match = plus.search(equation) # search the inner group for additions
             pp(plus_match.group(1), "plusses")
             equation = (equation[:plus_match.start(1)] 
-                            + str(eval(plus_match.group(1))) 
-                            + equation[plus_match.end(1):])
-            pp(equation, "equation after plusses fix")
-            #for group in plusses:
-                #pp(group, "grp")
-                #re.search(r"\D*" + group + r"\D*")
-                #equation = re.sub(plus, str(eval(group)), equation, 1)
-
-                #equation = equation.replace(group, str(eval(group)), 1)
-
-                #pp(equation, "repl plusses")
+                            + str(eval(plus_match.group(1)))    # insert the result of the addition back in
+                            + equation[plus_match.end(1):])     # this over time eliminates all plusses from the equation
+            pp(equation, "equation after plusses fix") 
+            
     for c in equation:
-        if not c.isdigit(): 
-            result += ")"
+        if not c.isdigit(): # add closing parenthesis before every operator
+            result += ")" 
             parentheses += 1
         result += c
-    openening_parentheses = "(" * parentheses
+
+    openening_parentheses = "(" * parentheses # add matching number of opening parentheses
     result = openening_parentheses + result
     pp(result, "calc result")
+
     value = eval(result)
     pp(value, "value")
+
     if returnString:
         return str(value)
     else:
         return(value)
 
-#calc(data[0], False)
 results = []
 for equation in data:
     pp(equation, "eq")
     e = equation
+
     while "(" in e:
         inners = inner.findall(e)
         pp(inners, "inn")
+
         for group in inners:
-            #pp(group, "grp")
-            e.index #re.sub
-            e = e.replace(group, calc(group, True), 1)
-        
+            e = e.replace(group, calc(group, True), 1)  #insert solved inner group into original equation as long as
+                                                        # there are parentheses present
             pp(e, "repl")
+
     results.append(calc(e, False))
 
-    
 pp(results, "Results")
 pp(sum(results), "Solution", True)
 
