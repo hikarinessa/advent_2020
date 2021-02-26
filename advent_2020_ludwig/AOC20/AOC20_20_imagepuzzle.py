@@ -1,6 +1,7 @@
 # https://adventofcode.com/2020/day/20
 from copy import deepcopy as deep
 from math import sqrt, factorial as fac
+
 debug = False
 printit = False
 part2 = False
@@ -52,7 +53,6 @@ def flip(tile):
                 
     return newtile
 
-
 def rotate(tile, degrees):
     
     if degrees == 0:
@@ -88,10 +88,6 @@ def checkneighbor(tile, neighbor, direction):
         print("checkneighbor error: invalid direction given")
         return None
     
-    
-    #ppp(tile)
-    #pp(border_self)
-    #pp(border_neighbor)
     fit = border_self == border_neighbor
     return fit
 
@@ -171,7 +167,6 @@ def solve_tile(row_index, col_index):
     p("--tile can't be solved")
     return False
     
-
 def iterate_tilemap():
     p("iterating tilemap...")
     solved = 1
@@ -199,8 +194,7 @@ def iterate_tilemap():
         if solved == len(TILES):
             return True
             break
-
-                
+               
 def select_starting_tile():
     global TILEMAP, TILEPOSITIONS, IMAGE  
     p("selecting starting tile...")
@@ -228,8 +222,6 @@ def select_starting_tile():
     p("Didn't work with ANY starting tile")
     return False
 
-
-
 if select_starting_tile():
     solution_found = True
     ppp(TILEMAP, "", True)
@@ -245,9 +237,6 @@ else:
 
 
 # STARTING TILE FOR SOLUTION: 3643
-
-
-
 
 #ppp(TILEMAP)   
 #ppp(TILEPOSITIONS, "tile positions dict", False, True)

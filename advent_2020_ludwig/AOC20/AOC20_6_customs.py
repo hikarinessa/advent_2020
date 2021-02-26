@@ -1,7 +1,4 @@
 # https://adventofcode.com/2020/day/6
-# 
-# The form asks a series of 26 yes-or-no questions marked a through z. 
-# All you need to do is identify the questions for which anyone in your group answers "yes".
 
 data = """abcx
 abcy
@@ -22,23 +19,6 @@ a
 a
 
 b"""
-# This list represents answers from six groups:
-
-# That top group there are 6 questions to which anyone answered "yes": a, b, c, x, y, and z. 
-# (Duplicate answers to the same question don't count extra; each question counts at most once.)
-# The first group contains one person who answered "yes" to 3 questions: a, b, and c.
-# The second group contains three people; combined, they answered "yes" to 3 questions: a, b, and c.
-# The third group contains two people; combined, they answered "yes" to 3 questions: a, b, and c.
-# The fourth group contains four people; combined, they answered "yes" to only 1 question, a.
-# The last group contains one person who answered "yes" to only 1 question, b.
-# In this example, the sum of these counts is 6 + 3 + 3 + 3 + 1 + 1 = 17.
-
-# For each group, count the number of questions to which anyone answered "yes". What is the sum of those counts?
-# Part 2
-# For each group, count the number of questions to which everyone answered "yes". What is the sum of those counts?
-# 3 + 3 + 0 + 1 + 1 + 1 = 15
-
-# import operator
 
 debug = False 
 printit = True

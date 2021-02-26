@@ -1,10 +1,5 @@
 # https://adventofcode.com/2020/day/10
 
-# In addition, your device has a built-in joltage adapter rated for 3 jolts higher than 
-# the highest-rated adapter in your bag. (If your adapter list were 3, 9, and 6, your device's 
-# built-in adapter would be rated for 12 jolts.)
-# Treat the charging outlet near your seat as having an effective joltage rating of 0.
-
 data = """16
 10
 15
@@ -16,17 +11,6 @@ data = """16
 6
 12
 4"""
-
-# With these adapters, your device's built-in joltage adapter would be rated for 
-# 19 + 3 = 22 jolts, 3 higher than the highest-rated adapter.
-
-# In this example, when using every adapter, there are 7 differences of 1 jolt and 5 
-# differences of 3 jolts.
-
-# Find a chain that uses all of your adapters to connect the charging outlet to 
-# your device's built-in adapter and count the joltage differences between the 
-# charging outlet, the adapters, and your device. 
-# What is the number of 1-jolt differences multiplied by the number of 3-jolt differences?
 
 from more_itertools import consecutive_groups
 

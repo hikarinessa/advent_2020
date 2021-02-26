@@ -10,22 +10,6 @@ vibrant plum bags contain 5 faded blue bags, 6 dotted black bags.
 faded blue bags contain no other bags.
 dotted black bags contain no other bags."""
 
-# These rules specify the required contents for 9 bag types. In this example, every faded blue bag is empty, every vibrant plum bag contains 11 bags (5 faded blue and 6 dotted black), and so on.
-
-# You have a shiny gold bag. If you wanted to carry it in at least one other bag, 
-# how many different bag colors would be valid for the outermost bag? 
-# (In other words: how many colors can, eventually, contain at least one shiny gold bag?)
-
-# In the above rules, the following options would be available to you:
-
-# A bright white bag, which can hold your shiny gold bag directly.
-# A muted yellow bag, which can hold your shiny gold bag directly, plus some other bags.
-# A dark orange bag, which can hold bright white and muted yellow bags, either of which could then hold your shiny gold bag.
-# A light red bag, which can hold bright white and muted yellow bags, either of which could then hold your shiny gold bag.
-# So, in this example, the number of bag colors that can eventually contain at least one shiny gold bag is 4.
-
-# How many bag colors can eventually contain at least one shiny gold bag?
-
 debug = False
 part2 = True 
 printit = True
@@ -38,8 +22,6 @@ dark yellow bags contain 2 dark green bags.
 dark green bags contain 2 dark blue bags.
 dark blue bags contain 2 dark violet bags.
 dark violet bags contain no other bags."""
-
-# In this example, a single shiny gold bag must contain 126 other bags.
 
 def pp(subject, name = ""): #prints anything with a name as string 
     if debug or printit:

@@ -1,9 +1,5 @@
 # https://adventofcode.com/2020/day/9
 
-# XMAS starts by transmitting a preamble of 25 numbers. After that, each number you receive 
-# should be the sum of any two of the 25 immediately previous numbers. 
-# The two numbers will have different values, and there might be more than one such pair.
-
 data = """35
 20
 15
@@ -24,23 +20,6 @@ data = """35
 277
 309
 576"""
-
-# In this example, after the 5-number preamble, almost every number is the sum of two 
-# of the previous 5 numbers; the only number that does not follow this rule is 127.
-
-# The first step of attacking the weakness in the XMAS data is to find the first number 
-# in the list (after the preamble) which is not the sum of two of the 25 numbers before it. 
-# What is the first number that does not have this property?
-
-# part 2
-# you must find a contiguous set of at least two numbers in your list which sum to 
-# the invalid number from step 1
-# In this list, adding up all of the numbers from 15 through 40 produces the invalid 
-# number from step 1, 127. (Of course, the contiguous set of numbers in your actual list might 
-# be much longer.)
-
-# To find the encryption weakness, add together the smallest and largest number in this 
-# contiguous range; in this example, these are 15 and 47, producing 62.
 
 debug = False
 printit = True

@@ -1,4 +1,4 @@
-# https://adventofcode.com/2020/day/16
+# https://adventofcode.com/2020/day/19
 
 data = """0: 4 1 5
 1: 2 3 | 3 2

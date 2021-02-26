@@ -1,8 +1,4 @@
-# https://adventofcode.com/2020/day/16
-
-# Start by determining which tickets are completely invalid; these 
-# are tickets that contain values which aren't valid for any field. Ignore your ticket for now.
-# For example, suppose you have the following notes:
+# https://adventofcode.com/2020/day/18
 
 data = """1 + 2 * 3 + 4 * 5 + 6
 1 + (2 * 3) + (4 * (5 + 6))
@@ -12,15 +8,6 @@ data = """1 + 2 * 3 + 4 * 5 + 6
 ((2 + 4 * 9) * (6 + 9 * 8 + 6) + 6) + 2 + 4 * 2"""
 
 data = "4 + (5 + (5 * 5 + 3 + 2) + (6 + 4 * 9 * 2 * 8) * 6 + (7 * 5 * 2) * (2 * 8 * 2)) + (8 * 7 + 7) * 6 * 9 * (5 + 9)"
-
-# It doesn't matter which position corresponds to which field; 
-# you can identify invalid nearby tickets by considering only 
-# whether tickets contain values that are not valid for any field. 
-# In this example, the values on the first nearby ticket are all 
-# valid for at least one field. This is not true of the other three 
-# nearby tickets: the values 4, 55, and 12 are are not valid for 
-# any field. Adding together all of the invalid values produces your 
-# ticket scanning error rate: 4 + 55 + 12 = 71.
 
 import re
 debug = False

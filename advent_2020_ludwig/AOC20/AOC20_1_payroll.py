@@ -1,9 +1,4 @@
 # https://adventofcode.com/2020/day/1
-# Specifically, they need you to find the two entries that sum to 2020 
-# and then multiply those two numbers together.
-
-# In this list, the two entries that sum to 2020 are 1721 and 299. Multiplying them 
-# together produces 1721 * 299 = 514579, so the correct answer is 514579.
 
 from itertools import combinations
 import time

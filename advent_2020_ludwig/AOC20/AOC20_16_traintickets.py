@@ -1,9 +1,5 @@
 # https://adventofcode.com/2020/day/16
 
-# Start by determining which tickets are completely invalid; these 
-# are tickets that contain values which aren't valid for any field. Ignore your ticket for now.
-# For example, suppose you have the following notes:
-
 data = """class: 1-3 or 5-7
 row: 6-11 or 33-44
 seat: 13-40 or 45-50
@@ -16,15 +12,6 @@ nearby tickets:
 40,4,50
 55,2,20
 38,6,12"""
-
-# It doesn't matter which position corresponds to which field; 
-# you can identify invalid nearby tickets by considering only 
-# whether tickets contain values that are not valid for any field. 
-# In this example, the values on the first nearby ticket are all 
-# valid for at least one field. This is not true of the other three 
-# nearby tickets: the values 4, 55, and 12 are are not valid for 
-# any field. Adding together all of the invalid values produces your 
-# ticket scanning error rate: 4 + 55 + 12 = 71.
 
 debug = False
 printit = False

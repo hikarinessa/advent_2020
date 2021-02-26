@@ -1,14 +1,5 @@
 # https://adventofcode.com/2020/day/14
 
-# The initialization program (your puzzle input) can either update the bitmask or write a value to memory. 
-# Values and memory addresses are both 36-bit unsigned integers. For example, ignoring bitmasks for a moment, 
-# a line like mem[8] = 11 would write the value 11 to memory address 8.
-
-# The bitmask is always given as a string of 36 bits, written with the most significant bit (representing 2^35) 
-# on the left and the least significant bit (2^0, that is, the 1s bit) on the right. The current bitmask is 
-# applied to values immediately before they are written to memory: a 0 or 1 overwrites the corresponding bit 
-# in the value, while an X leaves the bit in the value unchanged.
-
 data = """mask = XXXXXXXXXXXXXXXXXXXXXXXXXXXXX1XXXX0X
 mem[8] = 11
 mem[7] = 101
@@ -19,14 +10,6 @@ if part2:
 mem[42] = 100
 mask = 00000000000000000000000000000000X0XX
 mem[26] = 1"""
-
-# To initialize your ferry's docking program, you need the sum of all values left in 
-# memory after the initialization program completes. (The entire 36-bit address space begins 
-# initialized to the value 0 at every address.) In the above example, only two values in memory are not zero - 
-# 101 (at address 7) and 64 (at address 8) - producing a sum of 165.
-
-# Execute the initialization program. What is the sum of all values left in memory 
-# after it completes? (Do not truncate the sum to 36 bits.)
 
 from itertools import product
 
