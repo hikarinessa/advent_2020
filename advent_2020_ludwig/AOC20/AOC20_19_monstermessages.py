@@ -18,7 +18,6 @@ debug = False
 printit = False
 part2 = True
 
-
 def pp(subject, name = "", override = False): #prints anything with a name as string 
     if debug or printit or override:
         #print("\n", name, ": ", subject)
@@ -89,7 +88,6 @@ for i, rule in enumerate(rulestemp):
         rules[i] = [rules[i]]
         
     drules[rulesint[i]] = rules[i]
-
 
 srules = {}
 def solve():
