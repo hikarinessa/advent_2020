@@ -1,7 +1,5 @@
 # https://adventofcode.com/2020/day/23
 
-from copy import deepcopy as deep
-
 debug = False
 printit = False
 # ----------- ONLY WORKS FOR PART 2 --------------------
