@@ -1,83 +1,77 @@
 import os
 import sys
+import copy
+
 with open(os.path.join(sys.path[0], "../Inputs/input_day_8.txt"), "r") as my_input:
     _INPUT_1 = my_input.read().split("\n")
-    #print(_INPUT_1)
-
-_OUTPUT_2 = 0
-we_good = False
+    _INPUT_1 = [i.split(" ") for i in _INPUT_1]
+    # print(_INPUT_1)
 
 
-def cycle_until_loop(program_list, swapped):
-    """[Go through input until you come upon same input value INDEX, or exceed the index]
+class data_entry(object):
+    def __init__(self, data, index):
+        self.command = data[0]  # acc, jmp, nop
+        self.operation = data[1]  # +/-int
+        self.index = index
+        self.used = False  # has come up before
 
-    Params:
-        program_list ([list]): [a list of operations]
-        swapped ([bool]): [is an element of the list swapped]
+    @property
+    def info(self):
+        return "{} {} {} {}".format(self.command, self.operation, self.index, self.used)
 
-    """
+
+_DATA = []
+for i in range(0, len(_INPUT_1)):
+    _DATA.append(data_entry(_INPUT_1[i], i))
+
+finished = False
+
+
+def run_accumulator(data):
+
+    data_copy = copy.deepcopy(data)
     _ACCUMULATOR = 0
-    list_of_processed_values = []
+    is_used = False
     index = 0
-    while index not in list_of_processed_values:
+    while not is_used:
+        try:
+            if data_copy[index].used == False:
+                data_copy[index].used = True
+                if data_copy[index].command == "acc":
+                    _ACCUMULATOR += int(data_copy[index].operation)
+                    index += 1
+                elif data_copy[index].command == "jmp":
+                    index += int(data_copy[index].operation)
+                elif data_copy[index].command == "nop":
+                    index += 1
+            else:
+                is_used = True
+                return _ACCUMULATOR
+        except:
+            part_two = _ACCUMULATOR
+            print(part_two)
+            is_used = True
+            return _ACCUMULATOR
 
-        if index >= len(program_list) and swapped == True:
-            print("boop")
-            print(_ACCUMULATOR)
-            list_of_processed_values.append(index)
-            return _ACCUMULATOR, True
 
-        list_of_processed_values.append(index)
-        current_pos = _INPUT_1[index]
-        operation, argument = current_pos.split(" ")
+part_one = run_accumulator(_DATA)
+print(part_one)
+_DATA_copy = copy.deepcopy(_DATA)
+for i in range(0, len(_DATA)):
+    if _DATA_copy[i].command == "jmp":
+        _DATA_copy[i].command = "nop"
+        part_two = run_accumulator(_DATA_copy)
 
-        if operation == "acc":
-            _ACCUMULATOR += int(argument)
-            index += 1
-        elif operation == "jmp":
-            index += int(argument)
-        elif operation == "nop":
-            index += 1
-
-    return _ACCUMULATOR, False
-
-def swap_operator(operator):
-    if operation == "jmp": 
-        return "nop"
-    if operation == "nop":
-        return "jmp"
+    elif _DATA_copy[i].command == "nop":
+        _DATA_copy[i].command = "jmp"
+        part_two = run_accumulator(_DATA_copy)
     else:
-        return operator
+        if _DATA_copy[i].command != "acc":
+            print(i, _DATA_copy[i].info)
 
-
-for index in range(0, len(_INPUT_1)):
-
-    curr_index = index
-    new_list = _INPUT_1
-    operation, argument = _INPUT_1[index].split(" ")
-
-    print("1: ", operation)
-    operation = swap_operator(operation)
-    new_list[index] = operation + " " + argument
-    _OUTPUT_2, we_good = cycle_until_loop(new_list, True)
-    
-    if we_good:
-        print("LALA")
+    if finished:
         break
-    
 
-    print("2: ", operation)
+    _DATA_copy = copy.deepcopy(_DATA)
 
-
-
-
-print(cycle_until_loop(0, False))
-print(_OUTPUT_2)
-
-
-    
-
-
-
-
-
+print(part_two)
