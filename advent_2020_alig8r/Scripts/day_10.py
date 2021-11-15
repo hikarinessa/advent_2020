@@ -53,3 +53,6 @@ def old_part_one():
     #         current_adapter = jolt
     #         current_arrangement.append(1)
     pass
+
+
+print(map(lambda x: 9 + (1 if x == 3 else 6), range(4)))
